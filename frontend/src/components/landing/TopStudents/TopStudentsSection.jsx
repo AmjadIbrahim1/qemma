@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import StudentRow from './StudentRow';
-import styles from './topStudents.module.css';
+import styles from './TopStudents.module.css';
 import studentsService from '../../../services/students.service';
 
 const STREAMS = ['علمي رياضة', 'علمي علوم', 'أدبي'];

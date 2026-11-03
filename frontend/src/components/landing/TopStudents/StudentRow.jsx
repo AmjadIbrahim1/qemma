@@ -1,6 +1,6 @@
 // frontend/src/components/landing/TopStudents/StudentRow.jsx
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
-import styles from './topStudents.module.css';
+import styles from './TopStudents.module.css';
 
 const StudentRow = ({ student, rank }) => {
   const rankClass =

@@ -37,7 +37,7 @@ import StartJourneyPage from "../pages/StartJourney/StartJourneyPage";
 import TeachersBooksPage from "../pages/StartJourney/TeachersBooksPage";
 import TeacherBookDetailsPage from "../pages/StartJourney/TeacherBookDetailsPage";
 import CoursesPage from "../pages/StartJourney/CoursesPage";
-import CourseDetailsPage from "../pages/StartJourney/Coursedetailspage";
+import CourseDetailsPage from "../pages/StartJourney/CourseDetailsPage";
 import ExamsPageOut from "../pages/StartJourney/ExamsPageOut";
 import TeacherProfilePage from "../pages/StartJourney/TeacherProfilePage";
 

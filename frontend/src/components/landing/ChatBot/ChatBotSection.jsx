@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import LockIcon from '@mui/icons-material/Lock';
 import { motion } from 'framer-motion';
-import styles from './chatBot.module.css';
+import styles from './ChatBot.module.css';
 
 const ChatBotSection = () => {
   return (

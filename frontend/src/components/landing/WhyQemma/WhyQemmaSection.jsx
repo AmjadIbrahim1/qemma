@@ -1,6 +1,6 @@
 // frontend/src/components/landing/WhyQemma/WhyQemmaSection.jsx
 import { motion } from 'framer-motion';
-import styles from './whyQemmaSection.module.css';
+import styles from './WhyQemmaSection.module.css';
 import { FEATURES } from '../../../data/landingData.jsx';
 
 const WhyQemmaSection = () => {

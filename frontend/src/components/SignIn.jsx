@@ -2,7 +2,7 @@
 import { SignIn, useUser } from '@clerk/clerk-react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import authService from '../services/authService';
+import { authService } from '../services/auth.service';
 
 export default function SignInPage() {
   const { isSignedIn, user } = useUser();
@@ -54,7 +54,7 @@ export default function SignInPage() {
 // ============================================
 
 import { useSignIn } from '@clerk/clerk-react';
-import authService from '../services/authService';
+import { authService } from '../services/auth.service';
 
 export function GoogleSignInButton() {
   const { signIn } = useSignIn();

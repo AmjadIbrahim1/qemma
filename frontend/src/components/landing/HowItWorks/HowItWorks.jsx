@@ -1,6 +1,6 @@
 // frontend/src/components/landing/HowItWorks/HowItWorks.jsx
 import { motion } from 'framer-motion';
-import styles from './howItWorks.module.css';
+import styles from './HowItWorks.module.css';
 import {STEPS} from '../../../data/landingData';
 
 
