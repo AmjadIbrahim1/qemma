@@ -1,0 +1,227 @@
+/* frontend/src/components/landing/TopStudents/TopStudents.module.css */
+@import "tailwindcss";
+@reference "tailwindcss";
+
+/* SECTION: same as Hero */
+.section {
+  @apply relative overflow-hidden w-full
+         pt-10 md:pt-12
+         pb-24 md:pb-28;
+
+  background:
+    radial-gradient(900px 420px at 80% 10%, rgba(99,102,241,0.18), transparent 60%),
+    radial-gradient(900px 420px at 15% 15%, rgba(59,130,246,0.18), transparent 60%),
+    linear-gradient(135deg, #eff6ff 0%, #ffffff 45%, #eef2ff 100%);
+}
+
+:global(.dark) .section {
+  background-color: #070817;
+  background-image:
+    radial-gradient(900px 420px at 85% 0%, rgba(124,58,237,0.30), transparent 62%),
+    radial-gradient(900px 420px at 15% 8%, rgba(37,99,235,0.26), transparent 62%),
+    radial-gradient(700px 320px at 50% 100%, rgba(219,39,119,0.16), transparent 65%);
+}
+
+/* Pattern overlay */
+.bgPattern {
+  @apply absolute inset-0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(59,130,246,0.12), transparent 46%),
+    radial-gradient(circle at 80% 20%, rgba(99,102,241,0.12), transparent 46%);
+  opacity: 0.9;
+}
+
+:global(.dark) .bgPattern {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(59,130,246,0.16), transparent 46%),
+    radial-gradient(circle at 80% 20%, rgba(124,58,237,0.16), transparent 46%);
+  opacity: 0.75;
+}
+
+/* Top fade */
+.topFade {
+  @apply pointer-events-none absolute inset-x-0 top-0 h-20 md:h-24;
+  background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,0.92));
+}
+
+:global(.dark) .topFade {
+  background: linear-gradient(to top, rgba(7,8,23,0), rgba(7,8,23,0.92));
+}
+
+/* Container */
+.container {
+  @apply max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-24 relative z-10;
+}
+
+/* Header */
+.header {
+  @apply text-center mb-14 md:mb-16;
+}
+
+.title {
+  @apply text-3xl md:text-4xl font-extrabold tracking-tight;
+  color: rgb(17 24 39);
+  font-family: Cairo, system-ui, sans-serif;
+}
+
+:global(.dark) .title {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.subtitle {
+  @apply mt-3 text-lg leading-relaxed;
+  color: rgb(55 65 81);
+  font-family: Cairo, system-ui, sans-serif;
+}
+
+:global(.dark) .subtitle {
+  color: rgba(226, 232, 240, 0.86);
+}
+
+/* Grid */
+.grid {
+  @apply grid gap-6 md:gap-8 md:grid-cols-3;
+}
+
+/* Group card */
+.group {
+  @apply relative overflow-hidden rounded-2xl border;
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(15, 23, 42, 0.10);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+:global(.dark) .group {
+  background: rgba(17, 24, 39, 0.55);
+  border-color: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.35);
+}
+
+/* Top gradient line */
+.group::before {
+  content: "";
+  @apply absolute inset-x-0 top-0 h-[2px];
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 55%, #db2777 100%);
+  opacity: 0.95;
+}
+
+.groupHeader {
+  @apply p-6 pb-4 flex items-start justify-between gap-4;
+}
+
+.streamTitle {
+  @apply text-lg font-extrabold;
+  color: rgb(17 24 39);
+  font-family: Cairo, system-ui, sans-serif;
+}
+
+:global(.dark) .streamTitle {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.streamMeta {
+  @apply text-xs font-semibold;
+  color: rgb(107 114 128);
+  font-family: Cairo, system-ui, sans-serif;
+}
+
+:global(.dark) .streamMeta {
+  color: rgba(226, 232, 240, 0.65);
+}
+
+.list {
+  @apply px-4 pb-6;
+}
+
+/* Student row */
+.row {
+  @apply flex items-center justify-between gap-3
+         rounded-xl px-4 py-3 mb-3 last:mb-0
+         border transition;
+  background: rgba(248, 250, 252, 0.9);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+.row:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+}
+
+:global(.dark) .row {
+  background: rgba(2, 6, 23, 0.35);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.left {
+  @apply flex items-center gap-3 min-w-0;
+}
+
+/* rank badge */
+.rank {
+  @apply w-9 h-9 flex items-center justify-center
+         rounded-xl text-sm font-extrabold shrink-0;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  color: rgb(31 41 55);
+}
+
+:global(.dark) .rank {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.10);
+  color: rgba(226, 232, 240, 0.92);
+}
+
+.rankTop1 { border-color: rgba(245, 158, 11, 0.35); color: rgb(180 83 9); }
+.rankTop2 { border-color: rgba(148, 163, 184, 0.45); color: rgb(51 65 85); }
+.rankTop3 { border-color: rgba(234, 88, 12, 0.35); color: rgb(154 52 18); }
+
+:global(.dark) .rankTop1 { color: rgb(253 230 138); border-color: rgba(245, 158, 11, 0.25); }
+:global(.dark) .rankTop2 { color: rgb(226 232 240); border-color: rgba(148, 163, 184, 0.22); }
+:global(.dark) .rankTop3 { color: rgb(254 215 170); border-color: rgba(234, 88, 12, 0.22); }
+
+/* avatar */
+.avatar {
+  @apply w-10 h-10 rounded-full object-cover shrink-0;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+}
+
+:global(.dark) .avatar {
+  border-color: rgba(255, 255, 255, 0.10);
+}
+
+.nameWrap { @apply min-w-0; }
+
+.name {
+  @apply font-extrabold text-sm truncate;
+  color: rgb(17 24 39);
+  font-family: Cairo, system-ui, sans-serif;
+}
+
+:global(.dark) .name {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.stream {
+  @apply text-xs font-semibold truncate;
+  color: rgb(107 114 128);
+  font-family: Cairo, system-ui, sans-serif;
+}
+
+:global(.dark) .stream {
+  color: rgba(226, 232, 240, 0.65);
+}
+
+.scorePill {
+  @apply shrink-0 inline-flex items-center rounded-full px-3 py-1 text-sm font-extrabold;
+  background: rgba(37, 99, 235, 0.10);
+  color: rgb(30 64 175);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+}
+
+:global(.dark) .scorePill {
+  background: rgba(37, 99, 235, 0.14);
+  color: rgb(191 219 254);
+  border-color: rgba(37, 99, 235, 0.20);
+}

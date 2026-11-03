@@ -1,0 +1,148 @@
+/* frontend/src/components/landing/Navbar/Navbar.module.css */
+@import "tailwindcss";
+@reference "tailwindcss";
+
+/* Fixed navbar */
+.header {
+  @apply fixed top-0 left-0 right-0 z-50
+         border-b transition-colors duration-300;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  border-color: rgba(15, 23, 42, 0.08);
+}
+
+:global(.dark) .header {
+  background: rgba(0, 0, 0, 0.78);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-6 flex items-center justify-between;
+  height: 65px; /* زيادة الارتفاع من 64px (h-16) إلى 88px */
+  margin-top: 8px; /* إضافة مسافة من الأعلى */
+  margin-bottom: 8px; /* إضافة مسافة من الأسفل */
+}
+
+.logo {
+  @apply text-2xl font-extrabold cursor-pointer select-none;
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 55%, #db2777 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-right: 12px; /* مسافة من اليمين */
+}
+
+/* LINKS */
+.links {
+  @apply hidden md:flex items-center;
+  gap: 12px; /* زيادة المسافة بين اللينكات */
+  margin: 0 24px; /* مسافة من الجانبين */
+}
+
+.link {
+  @apply px-3 py-2 rounded-lg text-sm font-bold transition no-underline;
+  color: rgba(15, 23, 42, 0.75);
+  margin: 0 4px; /* مسافة بين كل لينك */
+}
+
+.link:hover {
+  background: rgba(37, 99, 235, 0.08);
+  color: rgba(37, 99, 235, 1);
+}
+
+:global(.dark) .link {
+  color: rgba(226, 232, 240, 0.88);
+}
+
+:global(.dark) .link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(191, 219, 254, 1);
+}
+
+/* Actions */
+.actions {
+  @apply flex items-center;
+  gap: 16px; /* زيادة المسافة بين العناصر */
+  margin-left: 12px; /* مسافة من اليسار */
+}
+
+.toggle {
+  @apply inline-flex items-center justify-center rounded-xl border transition;
+  border-color: rgba(15, 23, 42, 0.12);
+  margin: 0 4px; /* مسافة حول الزرار */
+}
+
+:global(.dark) .toggle {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.routerLink {
+  @apply no-underline;
+  margin: 0 4px; /* مسافة بين الأزرار */
+}
+
+/* User Menu Styles */
+.userButton {
+  @apply flex items-center gap-2 px-3 py-1.5 rounded-xl
+         border transition-all duration-200;
+  border-color: rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.userButton:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+  background: rgba(37, 99, 235, 0.05);
+}
+
+:global(.dark) .userButton {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+:global(.dark) .userButton:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.userInfo {
+  @apply flex flex-col items-start gap-0.5;
+}
+
+.userName {
+  @apply text-sm font-extrabold leading-none;
+  color: rgba(15, 23, 42, 0.95);
+}
+
+:global(.dark) .userName {
+  color: rgba(226, 232, 240, 0.95);
+}
+
+.userRole {
+  @apply text-xs font-bold leading-none;
+  color: rgba(75, 85, 99, 0.8);
+}
+
+:global(.dark) .userRole {
+  color: rgba(156, 163, 175, 0.8);
+}
+
+/* Scroll to top */
+.toTop {
+  @apply fixed bottom-6 right-6 z-50 w-11 h-11 rounded-2xl
+         flex items-center justify-center
+         opacity-0 pointer-events-none
+         transition-all duration-300;
+  color: white;
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 55%, #db2777 100%);
+  box-shadow: 0 16px 38px rgba(37, 99, 235, 0.28);
+}
+
+.toTop:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 46px rgba(124, 58, 237, 0.32);
+}
+
+.toTopShow {
+  @apply opacity-100 pointer-events-auto;
+}

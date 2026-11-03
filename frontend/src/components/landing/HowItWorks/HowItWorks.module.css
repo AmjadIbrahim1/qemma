@@ -1,0 +1,149 @@
+/* frontend/src/components/landing/HowItWorks/HowItWorks.module.css */
+@import "tailwindcss";
+@reference "tailwindcss";
+
+/* SECTION: match Hero/Why/Courses background */
+.section {
+  @apply relative overflow-hidden w-full
+         pt-10 md:pt-12
+         pb-24 md:pb-28;
+
+  background:
+    radial-gradient(900px 420px at 80% 10%, rgba(99,102,241,0.18), transparent 60%),
+    radial-gradient(900px 420px at 15% 15%, rgba(59,130,246,0.18), transparent 60%),
+    linear-gradient(135deg, #eff6ff 0%, #ffffff 45%, #eef2ff 100%);
+}
+
+:global(.dark) .section {
+  background-color: #070817;
+  background-image:
+    radial-gradient(900px 420px at 85% 0%, rgba(124,58,237,0.30), transparent 62%),
+    radial-gradient(900px 420px at 15% 8%, rgba(37,99,235,0.26), transparent 62%),
+    radial-gradient(700px 320px at 50% 100%, rgba(219,39,119,0.16), transparent 65%);
+}
+
+/* Pattern overlay */
+.bgPattern {
+  @apply absolute inset-0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(59,130,246,0.12), transparent 46%),
+    radial-gradient(circle at 80% 20%, rgba(99,102,241,0.12), transparent 46%);
+  opacity: 0.9;
+}
+
+:global(.dark) .bgPattern {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(59,130,246,0.16), transparent 46%),
+    radial-gradient(circle at 80% 20%, rgba(124,58,237,0.16), transparent 46%);
+  opacity: 0.75;
+}
+
+/* Top fade for smooth continuity */
+.topFade {
+  @apply pointer-events-none absolute inset-x-0 top-0 h-20 md:h-24;
+  background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,0.92));
+}
+
+:global(.dark) .topFade {
+  background: linear-gradient(to top, rgba(7,8,23,0), rgba(7,8,23,0.92));
+}
+
+/* Container */
+.container {
+  @apply max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-24 relative z-10;
+}
+
+/* Header */
+.header {
+  @apply text-center mb-14 md:mb-16;
+}
+
+.title {
+  @apply text-3xl md:text-4xl font-extrabold mb-4;
+  color: rgb(17 24 39);
+  font-family: Cairo, system-ui, sans-serif;
+}
+
+:global(.dark) .title {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.subtitle {
+  @apply text-lg leading-relaxed;
+  color: rgb(55 65 81);
+  font-family: Cairo, system-ui, sans-serif;
+}
+
+:global(.dark) .subtitle {
+  color: rgba(226, 232, 240, 0.86);
+}
+
+/* Grid */
+.grid {
+  @apply grid gap-6 md:gap-8
+         sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4;
+}
+
+/* Card (glassy) */
+.stepCard {
+  @apply relative overflow-hidden
+         rounded-3xl p-8 md:p-9
+         text-center border
+         transition-all duration-300;
+
+  background: rgba(248, 250, 252, 0.92);
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.stepCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 55px rgba(15, 23, 42, 0.10);
+}
+
+/* dark glass */
+:global(.dark) .stepCard {
+  background: rgba(17, 24, 39, 0.55);
+  border-color: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.35);
+}
+
+:global(.dark) .stepCard:hover {
+  box-shadow: 0 22px 65px rgba(0, 0, 0, 0.45);
+}
+
+/* tiny top accent line */
+.stepCard::before {
+  content: "";
+  @apply absolute inset-x-0 top-0 h-[2px];
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 55%, #db2777 100%);
+  opacity: 0.9;
+}
+
+/* icon */
+.icon {
+  @apply text-5xl mb-5;
+}
+
+/* title */
+.stepTitle {
+  @apply text-xl font-extrabold mb-3;
+  color: rgb(17 24 39);
+  font-family: Cairo, system-ui, sans-serif;
+}
+
+:global(.dark) .stepTitle {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* desc */
+.stepDesc {
+  @apply leading-relaxed;
+  color: rgb(55 65 81);
+  font-family: Cairo, system-ui, sans-serif;
+}
+
+:global(.dark) .stepDesc {
+  color: rgba(226, 232, 240, 0.86);
+}

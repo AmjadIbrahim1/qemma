@@ -1,0 +1,231 @@
+/* frontend/src/components/landing/CoursesSection/CoursesSection.module.css */
+@import "tailwindcss";
+@reference "tailwindcss";
+
+/* SECTION: match Hero/Why background */
+.section {
+  @apply relative overflow-hidden w-full;
+  @apply pt-10 md:pt-12 pb-24 md:pb-28;
+
+  background:
+    radial-gradient(900px 420px at 80% 10%, rgba(99,102,241,0.18), transparent 60%),
+    radial-gradient(900px 420px at 15% 15%, rgba(59,130,246,0.18), transparent 60%),
+    linear-gradient(135deg, #eff6ff 0%, #ffffff 45%, #eef2ff 100%);
+}
+
+:global(.dark) .section {
+  background-color: #070817;
+  background-image:
+    radial-gradient(900px 420px at 85% 0%, rgba(124,58,237,0.30), transparent 62%),
+    radial-gradient(900px 420px at 15% 8%, rgba(37,99,235,0.26), transparent 62%),
+    radial-gradient(700px 320px at 50% 100%, rgba(219,39,119,0.16), transparent 65%);
+}
+
+/* PATTERN overlay (same as Hero/Why) */
+.bgPattern {
+  @apply absolute inset-0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(59,130,246,0.12), transparent 46%),
+    radial-gradient(circle at 80% 20%, rgba(99,102,241,0.12), transparent 46%);
+  opacity: 0.9;
+}
+
+:global(.dark) .bgPattern {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(59,130,246,0.16), transparent 46%),
+    radial-gradient(circle at 80% 20%, rgba(124,58,237,0.16), transparent 46%);
+  opacity: 0.75;
+}
+
+/* TOP FADE: blends from previous section bottomFade */
+.topFade {
+  @apply pointer-events-none absolute inset-x-0 top-0 h-20 md:h-24;
+  background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,0.92));
+}
+
+:global(.dark) .topFade {
+  background: linear-gradient(to top, rgba(7,8,23,0), rgba(7,8,23,0.92));
+}
+
+/* CONTAINER */
+.coursesContainer {
+  @apply max-w-7xl mx-auto px-6 relative z-10;
+}
+
+/* HEADER */
+.header {
+  @apply flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-10;
+}
+
+.title {
+  @apply text-3xl md:text-4xl font-extrabold tracking-tight;
+  color: rgb(17 24 39);
+  font-family: Cairo, system-ui, sans-serif;
+}
+
+:global(.dark) .title {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+/* LINK */
+.link {
+  @apply font-semibold cursor-pointer hover:underline;
+  color: rgb(67 56 202); /* indigo-700 */
+  font-family: Cairo, system-ui, sans-serif;
+}
+
+:global(.dark) .link {
+  color: rgb(199 210 254); /* indigo-200 */
+}
+
+/* GRID */
+.grid {
+  @apply grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+}
+
+/* CARD */
+.card {
+  @apply overflow-hidden rounded-xl
+         border shadow-sm transition-all duration-300;
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(15, 23, 42, 0.10);
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  @apply shadow-lg -translate-y-1;
+}
+
+:global(.dark) .card {
+  background: rgba(17, 24, 39, 0.55);
+  border-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+/* MEDIA */
+.media {
+  @apply relative;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+:global(.dark) .media {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.image {
+  @apply w-full h-44 object-cover;
+  transition: transform 500ms ease;
+}
+
+.card:hover .image {
+  transform: scale(1.03);
+}
+
+/* Price badge */
+.priceBadge {
+  @apply absolute top-3 left-3
+         px-3 py-1 rounded-full
+         text-xs font-extrabold
+         border shadow-sm;
+  color: rgb(30 41 59);
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.16),
+    rgba(124, 58, 237, 0.14),
+    rgba(219, 39, 119, 0.12)
+  );
+  border-color: rgba(99, 102, 241, 0.28);
+}
+
+:global(.dark) .priceBadge {
+  color: rgb(226 232 240);
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.20),
+    rgba(124, 58, 237, 0.16),
+    rgba(219, 39, 119, 0.14)
+  );
+  border-color: rgba(99, 102, 241, 0.25);
+}
+
+/* BODY */
+.body {
+  @apply p-4;
+}
+
+.courseTitle {
+  @apply text-base font-extrabold leading-snug line-clamp-2;
+  color: rgb(17 24 39);
+  font-family: Cairo, system-ui, sans-serif;
+}
+
+:global(.dark) .courseTitle {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.teacherRow {
+  @apply mt-2 flex items-center gap-2 text-sm;
+}
+
+.teacherText {
+  @apply font-semibold;
+  color: rgb(75 85 99);
+  font-family: Cairo, system-ui, sans-serif;
+}
+
+:global(.dark) .teacherText {
+  color: rgba(226, 232, 240, 0.85);
+}
+
+.iconMuted {
+  @apply text-gray-400;
+}
+
+.stream {
+  @apply mt-2 text-xs font-bold;
+  color: rgb(107 114 128);
+  font-family: Cairo, system-ui, sans-serif;
+}
+
+:global(.dark) .stream {
+  color: rgba(226, 232, 240, 0.65);
+}
+
+/* meta row */
+.metaRow {
+  @apply mt-3 flex items-center flex-wrap gap-2
+         text-xs font-semibold;
+  color: rgb(75 85 99);
+  font-family: Cairo, system-ui, sans-serif;
+}
+
+:global(.dark) .metaRow {
+  color: rgba(226, 232, 240, 0.78);
+}
+
+.dot {
+  @apply w-1 h-1 rounded-full;
+  background: rgba(107, 114, 128, 0.55);
+}
+
+:global(.dark) .dot {
+  background: rgba(226, 232, 240, 0.35);
+}
+
+/* Level pill */
+.levelPill {
+  @apply px-2 py-1 rounded-full border;
+  color: rgb(76 29 149);
+  background: rgba(124, 58, 237, 0.10);
+  border-color: rgba(124, 58, 237, 0.22);
+}
+
+:global(.dark) .levelPill {
+  color: rgb(221 214 254);
+  background: rgba(124, 58, 237, 0.14);
+  border-color: rgba(124, 58, 237, 0.22);
+}
+
+.actions {
+  @apply mt-4;
+}
